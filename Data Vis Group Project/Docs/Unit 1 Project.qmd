@@ -22,7 +22,7 @@ For our project, we decided to look at a topic based in social sciences due to a
 # Load resources
 library(tidyverse)
 
-d <- read.csv("../data/drugs.csv")
+d <- read.csv("../Data/drugs.csv")
 ```
 
 We found a data source through corgis.edu, a site Felix had worked with in the past. This source had more than enough observations, so we did not have to combine multiple sources and only had to download it as a CSV file and load it into RStudio.
