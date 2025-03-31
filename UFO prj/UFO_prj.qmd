@@ -42,6 +42,16 @@ We will be analyzing whether there is a correlation between the location of the 
 ```{r}
 # Tidy up data for usability
 
+metFrame <- metData |>
+  select(
+    year, reclat, reclong
+  ) |>
+  
+  mutate(type = "Meteorite") |>
+  
+  arrange(year)
+
+metFrame
 ```
 
 ### Data exploration
