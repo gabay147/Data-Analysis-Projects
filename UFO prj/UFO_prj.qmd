@@ -8,6 +8,8 @@ embed-resources: true
 ```{r}
 # Load libraries
 library(tidyverse)
+library(sf)
+library(mapview)
 ```
 
 
@@ -37,18 +39,33 @@ our target DataFrame the following:
 * `Long` = the longitude of the event
 * `Type` = the type of the event (Meteorite or UFO sighting)
 
-We will be analyzing whether there is a correlation between the location of the event and the year in which they happened.
+We will be analyzing whether there is a correlation between the location of the 
+event and the year in which they happened.
 
 ```{r}
 # Tidy up data for usability
+# 1) Select from UFO data set for associated columns
+# 2) Select from Meteorite data set for associated columns
+# 3) Combine data into single tibble
+# This can be done as a "single" operation using pipes
 
+ufoFrame <- ufoData |>
+  select(
+    Dates.Sighted.Year,
+    Location.Coordinates.Latitude.,
+    Location.Coordinates.Longitude.
+  ) |>
+  mutate(type = "UFO") |>
+  arrange(Dates.Sighted.Year)
+
+ufoFrame
 ```
 
 ### Data exploration
 
 ```{r}
 # Look for correlations
-
+mapview(ufoFrame, xcol = "Location.Coordinates.Longitude.", ycol = "Location.Coordinates.Latitude.", crs = 4269)
 ```
 
 
