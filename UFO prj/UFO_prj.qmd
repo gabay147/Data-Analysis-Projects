@@ -5,13 +5,25 @@ format: html
 embed-resources: true
 ---
 
+```{r}
+# Load libraries
+library(tidyverse)
+```
+
+
 ## Starting off
 
 ### Importing files
 
 ```{r}
-# Load in files and libraries here
+# Load in files
 
+ufoData <- read.csv("Data/ufo_sightings.csv")
+
+metData <- read.csv("Data/Meteorite_Landings.csv")
+
+head(ufoData)
+head(metData)
 ```
 
 ### Data wrangling
