@@ -28,9 +28,28 @@ head(metData)
 
 ### Data wrangling
 
+After reviewing the available information in these data sets, we decided to make
+our target DataFrame the following:
+`Year, Lat, Long, Type`
+
+* `Year` = the year of the meteorite or UFO sighting
+* `Lat` = the latitude of the event
+* `Long` = the longitude of the event
+* `Type` = the type of the event (Meteorite or UFO sighting)
+
+We will be analyzing whether there is a correlation between the location of the event and the year in which they happened.
+
 ```{r}
 # Tidy up data for usability
 
 ```
+
+### Data exploration
+
+```{r}
+# Look for correlations
+
+```
+
 
 
